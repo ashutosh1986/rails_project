@@ -14,12 +14,12 @@
 <body>
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "microbreweries in ncr", '#', id: "logo" %>
+    <%= link_to "Microbreweries in NCR Region", '#', id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   '#' %></li>
-        <li><%= link_to "Help",   '#' %></li>
-        <li><%= link_to "Log in", 'login' %></li>
+        <li><%= link_to "Home",    root_path ,method:"get" %></li>
+        <li><%= link_to "Help",   help_path,method:"get" %></li>
+        <li><%= link_to "About",  about_path,method:"get" %></li>
       </ul>
     </nav>
   </div>

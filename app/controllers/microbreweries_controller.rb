@@ -5,19 +5,19 @@ class MicrobreweriesController < ApplicationController
 
   def rest_call(type, path, query, payload=nil)
     headers = {
-      :content_type => 'application/json',
-      :accept => 'application/json',
-      'X-Zomato-API-Key' => ZOMATO_API_KEY
+        :content_type => 'application/json',
+        :accept => 'application/json',
+        'X-Zomato-API-Key' => ZOMATO_API_KEY
     }
     headers[:params] = query
     url = URI.escape("https://developers.zomato.com/api/v2.1"+ path)
     p url
-      begin
-        response = RestClient::Request.execute(:method => type, :url => url, :headers => headers, :payload => payload)
-      rescue => e
-        p e.response
-      end
-      JSON.parse(response)
+    begin
+      response = RestClient::Request.execute(:method => type, :url => url, :headers => headers, :payload => payload)
+    rescue => e
+      p e.response
+    end
+    JSON.parse(response)
   end
 
   def index
@@ -39,7 +39,6 @@ class MicrobreweriesController < ApplicationController
     end
   end
 
-
   def show
     city_id = rest_call(:get, "/cities", {'q' => 'ncr'})["location_suggestions"][0]["id"]
     collection_id = rest_call(:get, "/collections", {'city_id' => city_id})["collections"].select{|collection| collection["collection"]["title"] == "Microbreweries"}[0]["collection"]["collection_id"]
@@ -52,16 +51,5 @@ class MicrobreweriesController < ApplicationController
       format.js
     end
   end
-
-  def new
-  end
-
-  def edit
-  end
-
-
-  def create
-  end
-
 
 end
