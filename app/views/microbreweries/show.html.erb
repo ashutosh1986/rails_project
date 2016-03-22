@@ -1,0 +1,33 @@
+<% provide(:title, "List") %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 col-sm-8 col-xs-6" style="margin-bottom: 0.5em;">
+    <span><%= image_tag(@restaurant["featured_image"]) %></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 0.5em;">
+      <label>Name : </label> <span><%= @restaurant["name"] %></span>
+    </div>
+  </div>
+    <br><br>
+  <div class="row">
+    <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 0.5em;">
+      <label>Rating : </label><span> <%= @restaurant["user_rating"]["aggregate_rating"] %></span>
+    </div>
+  </div>
+    <br><br>
+  <div class="row">
+    <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 0.5em;">
+      <label>Address : </label><span> <%= @restaurant["location"]["address"] %></span>
+    </div>
+  </div>
+    <br><br>
+    <div class="row"> 
+    <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 0.5em;">
+      <label><P></P>Phone Number : <%= @restaurant["phone_numbers"] if @restaurant["phone_numbers"].present?%></label>
+    </div>
+
+  </div>
+
+</div>
