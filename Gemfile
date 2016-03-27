@@ -7,7 +7,6 @@ gem 'rails', '4.2.5'
 #gem 'sqlite3'
 # Use SCSS for stylesheets
 # Use SCSS for stylesheets
-gem 'sass', '~> 3.4.18'
 gem 'sass-rails', '~> 5.0.0'# Use Uglifier as compressor for JavaScript assets
 gem 'materialize-sass'
 gem 'bootstrap-sass', '3.2.0.2'
@@ -31,7 +30,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'sass-rails', '~> 5.0.0'
 gem 'will_paginate'
 gem 'rest-client'
-
+gem 'rspec-rails'
+gem 'heroku'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
