@@ -1,5 +1,5 @@
 <div class="btn pull-right">
-  <%= button_to "Refresh", microbreweries_path, :method => :get %>
+  <%= button_to "Refresh", microbreweries_path, :class => "btn btn-primary btn-sm",:method => :get %>
 </div>
 <div class="container" style="margin-top: 3em;">
   <div class="row">
@@ -18,7 +18,7 @@
             </tr>
             <% @result.each do |restaurant| %>
                 <tr>
-                  <td> <%= image_tag(restaurant[0]) %></td>
+                  <td> <%= image_tag(restaurant[0],:class =>"img-rounded")%></td>
                   <td> <%= link_to restaurant[1], microbrewery_path(restaurant[1]) %></td>
                 </tr>
             <% end %>
@@ -32,5 +32,5 @@
 </div>
 
 <div class="container">
-  <%= will_paginate @result %>
+  <%= will_paginate @result,renderer: BootstrapPagination::Rails %>
 </div>
