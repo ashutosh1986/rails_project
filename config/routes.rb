@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :microbreweries
-
+  resources :scraps
   root             'static_pages#home'
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'

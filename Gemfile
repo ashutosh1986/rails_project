@@ -30,7 +30,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'sass-rails', '~> 5.0.0'
 gem 'will_paginate-bootstrap'
 gem 'rest-client'
-gem 'rspec-rails'
 gem 'heroku'
 
 # Use Unicorn as the app server
@@ -42,6 +41,7 @@ gem 'heroku'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'nokogiri'
 end
 
 group :development do

@@ -35,7 +35,7 @@ class MicrobreweriesController < ApplicationController
     @result = microbrewery_restaurant.paginate(:per_page => per_page, :page => page)
     respond_to do |format|
       format.html
-      format.js
+      format.json { render json: @result}
     end
   end
 
@@ -48,7 +48,7 @@ class MicrobreweriesController < ApplicationController
     @restaurant = rest_call(:get, "/restaurant", {'res_id' => res_id})
     respond_to do |format|
       format.html
-      format.js
+      format.json { render json: @restaurant}
     end
   end
 
